@@ -31,7 +31,7 @@ function verify() {
 				player:name[name.length-1],
 				round: 1
 			})
-			window.open("http://127.0.0.1:5500/computer.html");
+			window.open(window.location.href+"computer.html");
         }else{
             document.body.innerHTML="Login Failed!! Reload the page...";
         }
