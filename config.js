@@ -18,28 +18,30 @@ function verify() {
 	let name=document.getElementById('name').value;
 	let firebase_db=firebase.database().ref(name.substr(0, name.length-1));
     // Accessiblity
-    try{
+    
     firebase_db.on('value', (a)=>{
-        if(a.val().playerX==name.substring(0, 6)){
-            $("#exampleModal").modal('toggle');
-			firebase.database().ref("modes").update({
-				notify:true
-			})
-			
-			localStorage.setItem("admin", true);
-			firebase_db.update({
-				player:name[name.length-1],
-				round: 1
-			})
-			window.open(window.location.href+"computer.html");
-        }else{
-            document.body.innerHTML=`<div style="height:100vh" class="text-danger text-center d-flex align-items-center justify-content-center display-5">Error!!!</div>`;
-        }
+	try{
+		if(a.val().playerX==name.substring(0, 6)){
+		    $("#exampleModal").modal('toggle');
+				firebase.database().ref("modes").update({
+					notify:true
+				})
+
+				localStorage.setItem("admin", true);
+				firebase_db.update({
+					player:name[name.length-1],
+					round: 1
+				})
+				window.open(window.location.href+"computer.html");
+		}else{
+		    document.body.innerHTML=`<div style="height:100vh" class="text-danger text-center d-flex align-items-center justify-content-center display-5">Error!!!</div>`;
+		}
+	}catch{
+	      console.log("Error 200");
+	      document.body.innerHTML=`<div style="height:100vh" class="text-danger text-center d-flex align-items-center justify-content-center display-5">Login Failed! Refresh the page and try again.</div>`;
+	    }
     });
-    }catch{
-      console.log("Error 200");
-      document.body.innerHTML=`<div style="height:100vh" class="text-danger text-center d-flex align-items-center justify-content-center display-5">Login Failed! Refresh the page and try again.</div>`;
-    }
+    
     return;
 }
 
