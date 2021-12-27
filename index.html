@@ -46,11 +46,18 @@
 		#rules p,span{
 			font-family: 'Ubuntu', sans-serif;
 		}
+		
+		#note{
+			width: 100%;
+		}
 
 		@media (min-width: 760px) {
 			#logo{
 				width: 300px;
 				height: 300px;
+			}
+			#note{
+				width: 50%;
 			}
 		}
 	</style>
@@ -59,13 +66,13 @@
 
 <body class="text-white">
 	<section class="my-2 py-5" id="playground">
-		<div id="note"  data-toggle="modal" data-target="#exampleModal2" class="alert alert-warning alert-dismissible fade show" style="display:none; width: 93%; cursor: pointer;" role="alert">
-			<strong>Notification: </strong> You got an invitation for a match by Tahmid.
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			  <span aria-hidden="true">&times;</span>
-			</button>
-		</div>
 		<div class="container text-center">
+			<div id="note"  data-toggle="modal" data-target="#exampleModal2" class="alert alert-warning alert-dismissible fade show m-auto" style="display:none; cursor: pointer;" role="alert">
+				<strong>Notification: </strong> You got an invitation for a match by Tahmid.
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			</div><br>
 			<h3>Welcome to</h3>
 			<h1 class="m-heading my-2 text-warning p-1 mt-2">
 				<span class="m-heading playerX">Tic</span> Tac <span class="m-heading text-primary">Toe</span>
