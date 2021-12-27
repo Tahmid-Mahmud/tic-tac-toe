@@ -33,7 +33,7 @@ function verify() {
 			})
 			window.open(window.location.href+"computer.html");
         }else{
-            document.body.innerHTML=`<div style="height:100vh" class="text-primary text-center d-flex align-items-center justify-content-center display-4">Thanks for visiting</div>`;
+            document.body.innerHTML=`<div style="height:100vh" class="text-danger text-center d-flex align-items-center justify-content-center display-5">Error!!!</div>`;
         }
     });
     }catch{
