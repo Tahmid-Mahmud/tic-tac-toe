@@ -19,6 +19,7 @@ function verify() {
 	// name="Tahmid@2114X";
 	let firebase_db=firebase.database().ref(name.substr(0, name.length-1));
     // Accessiblity
+    try{
     firebase_db.on('value', (a)=>{
         if(a.val().playerX==name.substring(0, 6)){
             $("#exampleModal").modal('toggle');
@@ -33,9 +34,11 @@ function verify() {
 			})
 			window.open(window.location.href+"computer.html");
         }else{
-            document.body.innerHTML="Login Failed!! Reload the page...";
+            document.body.innerHTML=`<div style="height:100vh" class="text-primary text-center d-flex align-items-center justify-content-center display-4">Thanks for visiting</div>`;
         }
     });
+    }catch{
+      document.body.innerHTML=`<div style="height:100vh" class="text-primary text-center d-flex align-items-center justify-content-center display-4">Thanks for visiting</div>`;}
 	return;
 }
 
