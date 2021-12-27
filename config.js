@@ -16,7 +16,6 @@ if(firebase.apps.length === 0) {
 
 function verify() {
 	let name=document.getElementById('name').value;
-	// name="Tahmid@2114X";
 	let firebase_db=firebase.database().ref(name.substr(0, name.length-1));
     // Accessiblity
     try{
@@ -38,8 +37,10 @@ function verify() {
         }
     });
     }catch{
-      document.body.innerHTML=`<div style="height:100vh" class="text-primary text-center d-flex align-items-center justify-content-center display-4">Thanks for visiting</div>`;}
-	return;
+      console.log("Error 200");
+      document.body.innerHTML=`<div style="height:100vh" class="text-danger text-center d-flex align-items-center justify-content-center display-5">Login Failed! Refresh the page and try again.</div>`;
+    }
+    return;
 }
 
 function accept() {
