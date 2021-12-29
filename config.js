@@ -51,6 +51,8 @@ function accept() {
 		firebase.database().ref("Tahmid@2114").update({
 			playerY:yname
 		})
+		localStorage.setItem("player", true);
+
 		$("#exampleModal2").modal('toggle');
 		firebase.database().ref("modes").set({
 			play:true
