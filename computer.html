@@ -30,7 +30,15 @@
 	<!-- CSS Linking -->
 	<link rel="stylesheet" href="style.css">
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+	<script>
+		$(document).ready(function () {
+		  if(localStorage.getItem("admin") || localStorage.getItem("player")){
+		      console.log("ok")
+		  }else{
+				document.body.innerHTML=`<div style="height:100vh" class="text-warning text-center d-flex align-items-center justify-content-center display-5">A match is running</div>`;
+				}
+		  });
+	</script>
 	<title>Tic Tac Toe!</title>
 </head>
 
