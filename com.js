@@ -71,7 +71,7 @@ setTimeout(() => {
 		}
 		// set={}; set[admin]=sign
 		// game.update(set)
-	}else{
+	}else if(localStorage.getItem("player"){
 		if(roundNum%2!==0) {
 			console.log(roundNum)
 			sign = player;
@@ -80,7 +80,9 @@ setTimeout(() => {
 		}
 		// set={}; set[opp]=sign
 		// game.update(set)
-	}
+	}else{
+            console.log("3rd party");
+        }
 	
 	console.log(sign)
 	// sign2.innerHTML=` |${sign}|`; print()
@@ -198,6 +200,7 @@ function announce(result) {
 
 function final(){
 	document.body.innerHTML=`<div style="height:100vh" class="text-primary text-center d-flex align-items-center justify-content-center display-4">Thanks for visiting</div>`
+        localStorage.clear()
 }
 
 
