@@ -189,7 +189,7 @@ function check() {
 		alive = false;
 	}
 
-	if(!board.includes("")){
+	if(!board.includes("") && !isWon){
 		game.set({won: "TIE"})
 	}
 }
